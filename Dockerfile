@@ -5,8 +5,8 @@ FROM python:3.9-slim
 WORKDIR /app
 
 # 3. Salin file dependensi dan install
-COPY requirement.txt . # Hapus 's' di sini
-RUN pip install --no-cache-dir -r requirement.txt # Hapus 's' di sini
+COPY requirement.txt .
+RUN pip install --no-cache-dir -r requirement.txt
 
 # 4. Salin semua file kode aplikasi ke dalam container
 COPY . .
