@@ -43,11 +43,9 @@ jobs:
         with:
           context: . # Menentukan direktori konteks build ('.' berarti root repositori)
           push: true # Mengaktifkan aksi 'push' ke registry Docker Hub
+          # Hapus komentar/teks deskriptif dari sini! Hanya sisakan tag yang valid.
           tags: |
-            # Tag image dengan nama pengguna Docker Hub Anda, nama repositori GitHub Anda, dan 'latest'
             ${{ secrets.DOCKERHUB_USERNAME }}/uaspkplworkflow:latest
-            # Opsional: Tag image dengan nama pengguna Docker Hub Anda, nama repositori GitHub Anda, dan SHA commit
-            # Ini membantu melacak versi image dengan commit spesifik
             ${{ secrets.DOCKERHUB_USERNAME }}/uaspkplworkflow:${{ github.sha }}
           # file: ./Dockerfile # Jika Dockerfile tidak di root, tentukan jalurnya di sini.
                                # Karena Dockerfile Anda ada di root, ini tidak perlu eksplisit.
